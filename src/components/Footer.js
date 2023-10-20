@@ -18,7 +18,7 @@ const Footer = () => {
             onClick={onClickUrl("https://instagram.com/adityapatel149")}
           ></i>
         </div>
-        <p>A website by, Aditya Patel</p>
+        <p>A website by Aditya Patel</p>
       </div>
     </section>
   );
