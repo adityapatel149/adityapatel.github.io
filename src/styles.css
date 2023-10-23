@@ -1,7 +1,55 @@
+:root {
+  --primary-text-color: #202020;
+  --primary-text-color-hover: #f7f7f7;
+  --secondary-text-color: #626d84;
+  --tertiary-text-color: #626d84;
+  --tertiary-text-color-hover: #9fa3ad;
+
+  --background-color: #fff;
+
+  --primary-button-text-color: #000;
+  --primary-button-text-color-hover: #fff;
+  --primary-button-border: #000;
+  /*--primary-button-background: #fff;*/
+  --primary-button-background-hover: #000;
+
+  --dot-color: #2e2e48;
+  --container-color: #f7f9fc;
+  --container-color-hover: #e5e9eb;
+  --seperator-color: #d1d6e0;
+
+  --footer-background-color: #111;
+}
+
+/* 2 */
+[data-theme="dark"] {
+  --primary-text-color: #f7f7f7;
+  --primary-text-color-hover: #202020;
+  --secondary-text-color: #afb3b6;
+  --tertiary-text-color: #9fa3ad;
+  --tertiary-text-color-hover: #626d84;
+
+  --background-color: #090909;
+
+  --primary-button-text-color: #fff;
+  --primary-button-text-color-hover: #000;
+  --primary-button-border: #fff;
+  /*--primary-button-background: #090909;*/
+  --primary-button-background-hover: #fff;
+
+  --dot-color: #cacadd;
+  --container-color: #161616;
+  --container-color-hover: #202022;
+  --seperator-color: #2c2c2e;
+
+  --footer-background-color: #eee;
+}
+
 body {
   margin: 0;
   box-sizing: border-box;
   font-family: "Satoshi", sans-serif;
+  background-color: var(--background-color);
 }
 
 .App {
@@ -30,7 +78,7 @@ body {
 }
 
 h1 {
-  color: #202020;
+  color: var(--primary-text-color);
   font-family: Lexend;
   font-size: 12rem;
 
@@ -40,7 +88,7 @@ h1 {
 }
 
 h2 {
-  color: #202020;
+  color: var(--primary-text-color);
   font-size: 3rem;
   font-weight: 700;
   text-transform: capitalize;
@@ -48,7 +96,7 @@ h2 {
 }
 
 h3 {
-  color: #626d84;
+  color: var(--secondary-text-color);
   font-size: 2.5rem;
   font-weight: 400;
   margin: 0;
@@ -56,7 +104,7 @@ h3 {
 
 h4 {
   align-self: stretch;
-  color: #202020;
+  color: var(--primary-text-color);
   font-size: 2rem;
   font-weight: 500;
   line-height: 3.5rem; /* 175% */
@@ -66,7 +114,7 @@ h4 {
 
 p {
   align-self: stretch;
-  color: #626d84;
+  color: var(--secondary-text-color);
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 400;
@@ -94,7 +142,8 @@ li p {
 }
 
 .primary-button {
-  background-color: #fff;
+  background-color: var(--background-color);
+  color: var(--primary-button-text-color);
   padding: 1.5rem;
   border: none;
   font-size: 1.5rem;
@@ -106,8 +155,8 @@ li p {
 }
 
 .btn-inside {
-  background-color: #fff;
-  border: 1px solid #000;
+  background-color: var(--background-color);
+  border: 1px solid var(--primary-button-border);
   transition: 0.4s;
   pointer-events: none;
 }
@@ -127,8 +176,8 @@ li p {
 }
 
 .btn-inside2:hover {
-  background-color: #000;
-  color: #fff;
+  background-color: var(--primary-button-background-hover);
+  color: var(--primary-button-text-color-hover);
 }
 
 .seperator {
@@ -139,7 +188,7 @@ li p {
 }
 
 .seperator p {
-  color: #202020;
+  color: var(--primary-text-color);
 }
 
 .section-container {
@@ -181,15 +230,25 @@ li p {
   gap: 1rem;
   align-self: stretch;
   flex: 1 0 0;
-
+  /*border: 1px solid var(--primary-button-border);*/
   border-radius: 0.5rem;
-  background: #f7f9fc;
+  background: var(--container-color);
 
   cursor: pointer;
+  transition: 0.4s;
 }
 
 .project:hover {
-  background: #e5e9eb;
+  background: var(--container-color-hover);
+  /*
+  background-color: #000;
+  & p {
+    color: var(--tertiary-text-color-hover);
+  }
+  & h4 {
+    color: var(--primary-text-color-hover);
+  }
+  */
 }
 
 .project img {
@@ -209,7 +268,7 @@ li p {
 
 .project-content p {
   text-align: left;
-  color: #3e485b;
+  color: var(--tertiary-text-color);
 }
 
 .content-container {
@@ -242,7 +301,8 @@ li p {
   align-items: center;
 }
 
-.dot img {
+.dot svg {
+  color: var(--dot-color);
   width: 62.5%;
   height: 62.5%;
 
@@ -257,7 +317,7 @@ li p {
   align-items: center;
   flex: 1 0 0;
 
-  background: #f7f9fc;
+  background: var(--container-color);
 }
 
 .date-time {
@@ -294,12 +354,14 @@ li p {
   align-self: stretch;
 }
 
-.location img {
+.location svg {
+  color: var(--tertiary-text-color);
   height: 67%;
   margin: auto;
 }
 
 .location p {
+  color: var(--tertiary-text-color);
   margin: auto;
 }
 
@@ -336,6 +398,7 @@ li p {
   height: 5rem;
   flex-shrink: 0;
   border-radius: 1rem;
+  object-fit: cover;
 }
 
 .item-name {
@@ -347,7 +410,7 @@ li p {
 }
 
 .item-name .subtitle {
-  color: #202020;
+  color: var(--primary-text-color);
   align-self: stretch;
   font-weight: 500;
   text-transform: uppercase;
@@ -420,24 +483,25 @@ li p {
   flex: 1 0 0;
 
   border-radius: 0.5rem;
-  background: #f7f9fc;
+  background: var(--container-color);
 }
 
 .skill-seperator {
   width: 0.125rem;
   align-self: stretch;
-  background: #d1d6e0;
+  background: var(--seperator-color);
 }
 
 .skill p {
   flex: 1 0 0;
-  color: #3e485b;
+  color: var(--secondary-text-color);
   text-align: center;
   text-transform: capitalize;
 }
 
 .footer {
-  background-color: #111;
+  background-color: var(--footer-background-color);
+  color: var(--background-color);
   padding: 2rem 0;
   text-align: center;
   padding: 4rem;
@@ -445,14 +509,13 @@ li p {
 }
 
 .footer p {
+  color: var(--background-color);
   font-size: 1.25rem;
-  color: white;
   text-align: center;
 }
 
 .footer .social i {
   cursor: pointer;
-  color: white;
   margin: 2rem;
 }
 
