@@ -11,7 +11,10 @@ import Footer from "./Footer";
 import Switch from "react-switch";
 
 export default function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const isBrowserDefaultDark = () =>
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [darkMode, setDarkMode] = useState(isBrowserDefaultDark());
+
   const handleChange = () => {
     setDarkMode((prev) => !prev);
   };
@@ -48,7 +51,7 @@ export default function App() {
                 color: "red",
               }}
             >
-              <img src="/svg/moon-icon.svg" alt="" />
+              <img src="/svg/moon-icon.svg" alt="" height="60%" />
             </div>
           }
           checkedIcon={
@@ -60,7 +63,7 @@ export default function App() {
                 height: "100%",
               }}
             >
-              <img src="/svg/sun-icon.svg" alt="" />
+              <img src="/svg/sun-icon.svg" alt="" height="60%" />
             </div>
           }
           uncheckedHandleIcon={
