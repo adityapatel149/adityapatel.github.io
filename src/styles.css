@@ -44,6 +44,36 @@
   --footer-background-color: #eee;
 }
 
+/*######################################### SMOOTH SCROLLING LENIS SETUP ##########################*/
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/*###################################################### HIDE SCROLLBAR ############################################*/
+
+*::-webkit-scrollbar {
+  width: 0px;
+}
+
+/*###################################################### STYLING ############################################*/
+
 body {
   margin: 0;
   box-sizing: border-box;
@@ -540,7 +570,7 @@ li p {
   margin: 0 auto;
 }
 
-/*######################### MEDIA QUERIES ##############################*/
+/*########################################### MEDIA QUERIES ################################################*/
 
 @media screen and (max-width: 1024px) {
   .App {

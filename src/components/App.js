@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Lenis from "@studio-freight/lenis";
 import "../styles.css";
 import Hero from "./Hero";
 import AboutMe from "./AboutMe";
@@ -24,6 +25,21 @@ export default function App() {
       ? document.documentElement.setAttribute("data-theme", "dark")
       : document.documentElement.setAttribute("data-theme", "light");
   }, [darkMode]);
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      lerp: 0.06,
+      wheelMultiplier: 0.6,
+      gestureOrientation: "vertical",
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
 
   return (
     <main>
