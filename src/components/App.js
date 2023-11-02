@@ -29,7 +29,7 @@ export default function App() {
   useEffect(() => {
     const lenis = new Lenis({
       lerp: 0.06,
-      wheelMultiplier: 0.6,
+      wheelMultiplier: 0.8,
       gestureOrientation: "vertical",
     });
 
