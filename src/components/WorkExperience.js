@@ -27,7 +27,8 @@ export default function WorkExperience() {
           </div>
           <div className="timeline-item-content">
             <div className="date-time">
-              <div className="badge">
+              {/*<div className="badge">*/}
+              <div>
                 <p>Dec 2023 - June 2024</p>
               </div>
               <div className="location">
@@ -105,7 +106,7 @@ export default function WorkExperience() {
           </div>
           <div className="timeline-item-content">
             <div className="date-time">
-              <div className="badge">
+              <div>
                 <p>June 2023 - Oct 2023</p>
               </div>
               <div className="location">
